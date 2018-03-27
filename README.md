@@ -3,6 +3,7 @@
 查询接口方面用了自己去年写的一个项目 [NeteaseApi](https://github.com/leftvalue/NeteaseApi),然后仿照[网易云音乐 for mac](http://music.163.com/#/download)的样式写了网页,搜索请求通过后端的加密重新请求网易云音乐的服务器,得到的 json 经由服务端返给前端,而指定歌曲的实际播放地址与 album 封面图均由页面直接解析 json 跨域获取.
 
 ### Demo 地址
+![截图](/screenshot/demo.png)
 [左值的仿网易云音乐🤩](http://www.leftvalue.top:8080/neteasemusic/dev/html/index.html)
 ### 现已实现
 * 页面的初步模仿
