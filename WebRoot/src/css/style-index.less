@@ -1,0 +1,513 @@
+/* Import Less files */
+@import "lib-mixins";
+@import "lib-reset";
+/* Import lib-rem.less if supportREM opened. */
+@import "lib-rem";
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 20% [shu] auto;
+  grid-template-rows: 8.9% [heng1] auto [heng2] 9.3%;
+  grid-template-areas: "header header" "nav article" "footer footer";
+  background-color: white;
+  background-image: url("../img/fss.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@netease_red: rgb(180, 36, 28);
+@netease_gray: rgba(244, 244, 240, .7);
+@translate_white: rgba(255, 255, 255, .5);
+header {
+  background-color: @netease_red;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  .logo {
+    margin-left: 1em;
+    margin-right: .5em;
+    max-height: 60%;
+  }
+
+  .name {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .direc {
+    margin-left: 3em;
+    max-height: 3em;
+    max-width: 3em;
+    display: flex;
+    align-items: center;
+  }
+  .line {
+    height: 100%;
+    width: .07em;
+    background: #c4c3c1;
+    position: absolute;
+    right: 13%;
+  }
+}
+
+img.left, img.right {
+  margin-top: auto;
+  margin-bottom: auto;
+  border: solid #902513 .05em;
+  width: 1em;
+  height: 1em;
+}
+
+img.left {
+  margin-right: 0;
+}
+
+img.right {
+  margin-left: 0;
+}
+
+.search {
+  color: #BABABA;
+  min-width: 15em;
+  height: 1.2em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  position: absolute;
+  left: 30%;
+
+  img {
+    background-color: white;
+    height: 1.1em;
+    flex: none;
+    border: solid white .1em;
+    border-radius: 2em 0 0 2em;
+  }
+  input {
+    flex: 1;
+    outline: none;
+    height: 1.1em;
+    flex-basis: 100% auto;
+    border: solid white .1em;
+    border-radius: 0 1em 1em 0;
+  }
+}
+
+#notify {
+  position: absolute;
+  right: 20%;
+  height: 35%;
+  &::after {
+    position: absolute;
+    content: "";
+    top: -25%;
+    right: -25%;
+    left: 75%;
+    bottom: 75%;
+    background-color: white;
+    color: @netease_red;
+    font-size: .3em;
+    border: solid transparent 1px;
+    border-radius: 100% 100%;
+  }
+}
+
+#setting {
+  position: absolute;
+  right: 15%;
+  height: 35%;
+}
+
+#user {
+  position: absolute;
+  right: 3%;
+  width: 3em;
+  height: 1.3em;
+  .usericon {
+    height: 100%;
+    border: solid transparent 0.1em;
+    border-radius: 2em;
+    float: left;
+  }
+  .down {
+    height: 50%;
+  }
+}
+
+nav {
+  background-color: @netease_gray;
+  opacity: .7;
+  border-right: solid #c4c3c1 2px;
+  grid-area: nav;
+  position: relative;
+  .menu {
+    margin: 0;
+    position: absolute;
+    //overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    font-size: .7em;
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      -ms-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+    }
+    li.title {
+      padding: .05em;
+      color: #7c7e79;
+      text-indent: .5em;
+      font-size: .7em;
+    }
+    li.content {
+      padding: .05em;
+      color: black;
+      text-indent: 1.5em;
+      &:hover, &:active, &:focus {
+        background-color: #e3d8d7;
+        &::before {
+          position: absolute;
+          content: "";
+          left: 0em;
+          height: 1em;
+          width: .2em;
+          background-color: @netease_red;
+        }
+      }
+    }
+  }
+  .currentplay {
+    position: absolute;
+    border-top: solid #c4c3c1 2px;
+    max-height: 15%;
+    top: 85%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    .album {
+      margin-left: .6em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      //grid-area: ablum;
+      width: 2em;
+      height: 2em;
+      background-image: url("../img/album.jpg");
+      background-size: cover;
+      border: solid transparent 0px;
+      border-radius: 5% 5%;
+    }
+    .action {
+      position: absolute;
+      top: 50%;
+      left: 35%;
+      transform: translateY(-50%);
+      height: 65%;
+      width: 60%;
+      & > div {
+        position: absolute;
+      }
+      & > span {
+        font-size: 60%;
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+      }
+      #song-name {
+        top: 0;
+        bottom: 50%;
+        left: 0;
+        right: 30%;
+      }
+      #singer {
+        top: 50%;
+        bottom: 0;
+        left: 0;
+        right: 30%;
+        color: #7c7e79;
+        font-size: 50%;
+      }
+      #share {
+        top: 0%;
+        bottom: 50%;
+        left: 70%;
+        right: 0;
+        background-image: url("../img/share.png");
+        background-size: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      #collect {
+        top: 50%;
+        bottom: 0;
+        left: 70%;
+        right: 0;
+        background-size: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.off {
+          background-image: url("../img/收藏.png");
+        }
+        &.on {
+          background-image: url("../img/已收藏.png");
+        }
+      }
+    }
+  }
+}
+
+//通用进度条
+.progress {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: white;
+  .progress.line {
+    height: 100%;
+  }
+  .progress.left {
+    background-color: @netease_red;
+    flex: 1;
+    //border: solid transparent .01px;
+    //border-radius: 50% 0 0 50%;
+  }
+}
+
+footer {
+  background-color: @netease_gray;
+  border-top: solid #c4c3c1 2px;
+  grid-area: footer;
+  .control {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    float: left;
+    width: 20%;
+    height: 100%;
+    border-right: solid white 1px;
+    img {
+      background-color: @netease_red;
+      border: solid transparent .1em;
+      border-radius: 100% 100%;
+      //box-sizing: border-box;
+      padding: 2%;
+      &.small {
+        max-height: 20%;
+      }
+      &.normal {
+        max-height: 30%;
+      }
+    }
+  }
+  .play-progress {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border-right: solid white 1px;
+    position: relative;
+    .progress-line {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      height: 7%;
+      width: 60%;
+      background: @netease_red;
+    }
+    .progress-position {
+      position: absolute;
+
+      left: 40%;
+      //要好好整理一下垂直居中的方法 s
+      //top: 50%;
+      //transform: translateY(-50%);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      height: .2em;
+      width: .2em;
+      background-color: @netease_red;
+      border: solid white .3em;
+      border-radius: 50% 50%;
+    }
+    .progress-text {
+      font-size: 80%;
+      transform: translateY(80%);
+      color: #000;
+      line-height: 100%;
+      float: right;
+      margin-right: 1em;
+      margin-bottom: auto;
+    }
+  }
+  .volume {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    float: left;
+    width: 20%;
+    height: 100%;
+    border-right: solid white 1px;
+    .sound {
+      width: 1em;
+      height: 1em;
+      flex: none;
+      background-size: cover;
+    }
+    .sound.on {
+      background-image: url(../img/soundon.png);
+    }
+    .sound.off {
+      background-image: url(../img/soundoff.png);
+    }
+    .progress {
+      height: 7%;
+      top: 47%;
+      left: 20%;
+      width: 60%;
+    }
+  }
+}
+
+article {
+  grid-area: article;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  & > p {
+    float: top;
+    margin-top: 1%;
+    margin-left: 4%;
+    font-size: .5em;
+    color: #000;
+    span {
+      &::before {
+        content: " ";
+      }
+      &::after {
+        content: " ";
+      }
+      color: #3c82cb;
+    }
+  }
+  .panel {
+    //position: absolute;
+    font-size: .7em;
+    margin-left: 4%;
+    margin-top: 3%;
+    width: 80%;
+    float: top;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    div {
+
+      min-width: 10%;
+      vertical-align: middle;
+      text-align: center;
+
+      &.on {
+        background-color: @netease_red;
+        color: white;
+      }
+      &.off {
+        background-color: @netease_gray;
+        @border-style: solid 1px #7c7e79;
+        border-top: @border-style;
+        border-left: @border-style;
+        border-right: @border-style;
+        color: #000;
+      }
+    }
+  }
+  .list {
+    //position: absolute;
+    //top: 15%;
+    //bottom: 0;
+    float: top;
+    width: 100%;
+    font-size: .6em;
+    table {
+      width: 100%;
+      border-top: solid 4px @netease_red;
+      tr {
+        height: 2em;
+        width: 100%;
+        th {
+          &:nth-of-type(1) {
+            width: 6%;
+          }
+          &:nth-of-type(2) {
+            width: 6%;
+          }
+          &:nth-of-type(3) {
+            width: 24%;
+          }
+          &:nth-of-type(4) {
+            width: 12%;
+          }
+          &:nth-of-type(5) {
+            width: 24%;
+          }
+          &:nth-of-type(6) {
+            width: 6%;
+          }
+        }
+      }
+      th {
+        background-color: @translate_white;
+        color: #7c7e79;
+        border: .05em solid #7c7e79;
+        border-top: none;
+      }
+      tbody {
+        color: #202020;
+        tr {
+          td:nth-of-type(1) {
+            text-align: center;
+          }
+          td:nth-of-type(6) {
+            padding-left: .5em;
+          }
+        }
+        tr:nth-of-type(2n) {
+          background-color: @translate_white;
+        }
+        tr:nth-of-type(2n+1) {
+          background-color: @netease_gray;
+        }
+        tr.onplay {
+          background: @netease_red;
+          color: white;
+        }
+      }
+    }
+  }
+}

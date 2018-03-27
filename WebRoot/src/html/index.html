@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>左值的仿网易云音乐</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/style-index.css"/>
+</head>
+<body>
+<header>
+    <img src="../img/icon.png" class="logo">
+    <div class="name">网易云音乐</div>
+    <div class="direc">
+        <img src="../img/left.png" class="left">
+        <img src="../img/right.png" class="right">
+    </div>
+    <label class="search">
+        <img src="../img/search.png">
+        <input type="text" placeholder="搜索音乐,歌手,歌词,用户" id="searchbox">
+    </label>
+    <img src="../img/email.png" id="notify">
+    <img src="../img/set.png" id="setting">
+    <div class="line"></div>
+    <label id="user"><img src="../img/user.jpg" class="usericon">
+        <img src="../img/bottom.png" class="down"></label>
+</header>
+<nav>
+    <ul class="menu">
+        <li class="title">推荐</li>
+        <li class="content">发现音乐</li>
+        <li class="content">私人 FM</li>
+        <li class="content">MV</li>
+        <li class="content">朋友</li>
+        <li class="title">我的音乐</li>
+        <li class="content">iTunes 音乐</li>
+        <li class="content">下载的音乐</li>
+        <li class="content">我的歌手</li>
+        <li class="content">我的 MV</li>
+        <li class="content">我的电台</li>
+        <li class="title">创建歌单</li>
+        <li class="content">我喜欢的音乐</li>
+        <li class="content">冬夜失眠</li>
+        <li class="content">粤语</li>
+        <li class="content">宋冬野</li>
+        <li class="content">Vae 他有一点烦恼</li>
+        <li class="title">收藏的歌单</li>
+        <li class="content">Jay</li>
+        <li class="content">周杰伦</li>
+        <li class="content">蓬岛以左 煮雪烧茶</li>
+    </ul>
+    <div class="currentplay">
+        <div class="album" id="album_picture"></div>
+        <div class="action">
+            <span id="song-name">最长的电影 原生带</span>
+            <span id="singer">周杰伦</span>
+            <div id="collect" class="off"></div>
+            <div id="share"></div>
+        </div>
+    </div>
+</nav>
+<article>
+    <p>搜索"<span>最长的电影</span>"找到<span>521</span>首单曲</p>
+    <div class="panel">
+        <div class="on">单曲</div>
+        <div class="off">歌手</div>
+        <div class="off">专辑</div>
+        <div class="off">MV</div>
+        <div class="off">歌单</div>
+        <div class="off">歌词</div>
+        <div class="off">主播电台</div>
+        <div class="off">用户</div>
+    </div>
+    <div class="list">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>操作</th>
+                <th>音乐标题</th>
+                <th>歌手</th>
+                <th>专辑</th>
+                <th>时长</th>
+                <th>热度</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-songs-list">
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>等你下课 (with 杨瑞代)</td>
+                <td>周杰伦</td>
+                <td>《等你下课》</td>
+                <td>04:30</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>告白气球</td>
+                <td>周杰伦</td>
+                <td>《周杰伦的床边故事》</td>
+                <td>03:35</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>晴天</td>
+                <td>周杰伦</td>
+                <td>《叶惠美》</td>
+                <td>04:29</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>稻香</td>
+                <td>周杰伦</td>
+                <td>《魔杰座》</td>
+                <td>03:43</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>不能说的秘密</td>
+                <td>周杰伦</td>
+                <td>《不能说的秘密 电影原声带》</td>
+                <td>04:56</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>彩虹</td>
+                <td>周杰伦</td>
+                <td>《我很忙》</td>
+                <td>04:23</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>七里香</td>
+                <td>周杰伦</td>
+                <td>《七里香》</td>
+                <td>04:59</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>青花瓷</td>
+                <td>周杰伦</td>
+                <td>《我很忙》</td>
+                <td>03:59</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>安静</td>
+                <td>周杰伦</td>
+                <td>《范特西》</td>
+                <td>05:34</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>轨迹</td>
+                <td>周杰伦</td>
+                <td>《寻找周杰伦》</td>
+                <td>05:26</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>以父之名</td>
+                <td>周杰伦</td>
+                <td>《叶惠美》</td>
+                <td>05:42</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>一路向北 - (电影《头文字D》插曲)</td>
+                <td>周杰伦</td>
+                <td>《十一月的萧邦》</td>
+                <td>04:55</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>开不了口</td>
+                <td>周杰伦</td>
+                <td>《范特西》</td>
+                <td>04:44</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>算什么男人</td>
+                <td>周杰伦</td>
+                <td>《哎呦，不错哦》</td>
+                <td>04:49</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>简单爱</td>
+                <td>周杰伦</td>
+                <td>《范特西》</td>
+                <td>04:30</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>最长的电影</td>
+                <td>周杰伦</td>
+                <td>《我很忙》</td>
+                <td>03:55</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>烟花易冷</td>
+                <td>周杰伦</td>
+                <td>《跨时代》</td>
+                <td>04:23</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>夜曲</td>
+                <td>周杰伦</td>
+                <td>《十一月的萧邦》</td>
+                <td>03:46</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>甜甜的</td>
+                <td>周杰伦</td>
+                <td>《我很忙》</td>
+                <td>04:03</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>搁浅</td>
+                <td>周杰伦</td>
+                <td>《七里香》</td>
+                <td>04:00</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>半兽人</td>
+                <td>周杰伦</td>
+                <td>《八度空间》</td>
+                <td>04:07</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>退后</td>
+                <td>周杰伦</td>
+                <td>《依然范特西》</td>
+                <td>04:21</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>回到过去</td>
+                <td>周杰伦</td>
+                <td>《八度空间》</td>
+                <td>03:53</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>龙卷风</td>
+                <td>周杰伦</td>
+                <td>《Jay 同名专辑》</td>
+                <td>04:10</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>说好的幸福呢</td>
+                <td>周杰伦</td>
+                <td>《魔杰座》</td>
+                <td>04:16</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>蒲公英的约定</td>
+                <td>周杰伦</td>
+                <td>《我很忙》</td>
+                <td>04:07</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>听妈妈的话</td>
+                <td>周杰伦</td>
+                <td>《依然范特西》</td>
+                <td>04:25</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>世界末日</td>
+                <td>周杰伦</td>
+                <td>《Fantasy Plus》</td>
+                <td>04:25</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>😀😆</td>
+                <td>半岛铁盒</td>
+                <td>周杰伦</td>
+                <td>《八度空间》</td>
+                <td>05:19</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</article>
+<footer>
+    <div class="control">
+        <img src="../img/last.png" class="small">
+        <img src="../img/start.png" class="normal">
+        <img src="../img/next.png" class="small">
+    </div>
+    <div class="play-progress">
+        <div class="progress-line"></div>
+        <div class="progress-position"></div>
+        <div class="progress-text">02:36/03:55</div>
+    </div>
+    <div class="volume">
+        <div class="sound on"></div>
+        <div class="progress">
+            <div class="progress line left"></div>
+            <div class="progress position"></div>
+        </div>
+    </div>
+</footer>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
