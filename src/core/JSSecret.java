@@ -23,9 +23,9 @@ public class JSSecret {
 		try {
 			Path path = null;
 			// try {
-			// path = Paths.get("core.js");
+			 path = Paths.get("core.js");
 			// } catch (Exception fnfe) {
-			path = Paths.get(JSSecret.class.getClassLoader().getResource("../../core.js").getPath());
+//			path = Paths.get(JSSecret.class.getClassLoader().getResource("../../core.js").getPath());
 			// }
 			byte[] bytes = Files.readAllBytes(path);
 			String js = new String(bytes);
