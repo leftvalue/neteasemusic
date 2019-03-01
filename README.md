@@ -4,7 +4,7 @@
 
 ### Demo 地址
 ![截图](/screenshot/demo.png)
-[左值的仿网易云音乐🤩](http://www.leftvalue.top:8080/neteasemusic/dev/html/index.html)
+[左值的仿网易云音乐🤩(服务器到期,原地址作废)](http://www.leftvalue.top:8080/neteasemusic/dev/html/index.html)
 ### 现已实现
 * 页面的初步模仿
 * 搜索功能
